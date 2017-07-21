@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.0'
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+repositories {
+    maven {
+        url  "http://dl.bintray.com/android/android-tools"
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:26.0.0-beta2'
+}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'splash'
+
+    publishedGroupId = 'com.mcnallydev.library'
+    libraryName = 'Splash'
+    artifact = 'splash'
+
+    libraryDescription = 'McNally Developers Android Library for Splash Screen'
+
+    siteUrl = 'https://github.com/mcnallydev/splash'
+    gitUrl = 'https://github.com/mcnallydev/splash.git'
+
+    libraryVersion = '0.0.4'
+
+    developerId = 'paulomcnally'
+    developerName = 'McNally Developers'
+    developerEmail = 'maven@mcnallydevelopers.com'
+
+    licenseName = 'The MIT License'
+    licenseUrl = 'http://opensource.org/licenses/mit-license.php'
+    allLicenses = ["MIT"]
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
