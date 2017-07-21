@@ -12,7 +12,7 @@ You can download from maven central.
 Add to **AndroidManifest.xml**.
 
     <activity
-      android:name="com.chocoyo.labs.splash.SplashActivity"
+      android:name="com.mcnallydev.library.splash.SplashActivity"
       android:configChanges="keyboardHidden|orientation"
       android:theme="@style/AppTheme.NoActionBar.Fullscreen">
         <intent-filter>
